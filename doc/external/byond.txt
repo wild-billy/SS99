@@ -1,0 +1,46 @@
+
+//**************************************************************
+//
+// Supplementary Documentation - BYOND
+// -------------------------------------------
+// Contents:
+//     1 ABOUT BYOND
+//     2 DREAM DAEMON
+//     3 DREAM MAKER
+//     4 DREAM SEEKER
+//
+//**************************************************************
+/*// BEGIN Doc /////////////////////////////////////////////////
+
+1  ABOUT BYOND
+   -------------------------------------------------------------
+   Ancient platform for multiplayer games. Free, but not open-
+   source. Created by Tom and Dan in the mid-90s. If they had
+   made an MMO instead of an MMO engine, they would be filthy
+   rich and living like kings today. But no, they made this.
+   
+   It's not in active development, other than the webclient (no
+   I don't know why, maybe Tom's not done chasing fairy tales).
+   
+   It's also really poorly documented, so this should help.
+   -------------------------------------------------------------
+   
+2  DREAM DAEMON
+   -------------------------------------------------------------
+   Dream Daemon is a virtual machine that runs bytecode.
+   It runs the server and handles basically everything.
+   -------------------------------------------------------------
+   
+3  DREAM MAKER
+   -------------------------------------------------------------
+   Dream Maker is BYOND's included IDE. It's complete garbage.
+   Included is a set of ideas/tools to help you avoid it. (TODO)
+   -------------------------------------------------------------
+   
+2  Dream Seeker
+   -------------------------------------------------------------
+   Dream Seeker is the client. It does almost nothing other than
+   the DirectX transforms (which will be our golden hammer).
+   -------------------------------------------------------------
+
+*//////////////////////////////////////////////////// END Doc //

@@ -1,0 +1,47 @@
+   _____    _____   _____   _____   ////////////////////////////
+  / ____|  / ____| |  _  | |  _  |  //   __      __      __   //
+ | |____  | |____  | |_| | | |_| |  //   ||  ====||====  ||   //
+ |____  | |____  | |___  | |___  |  //   ||  ====||====  ||   //
+  ____| |  ____| |    / /     / /   //  |__|----(99)----|__|  //
+ |_____/  |_____/    /_/     /_/    //   ||  ====||====  ||   //
+ ---------------------------------- //   ||  ====||====  ||   //
+  ======= SPACE STATION 99 =======  //   ^^      ^^      ^^   //
+////////////////////////////////////////////////////////////////
+
+----------------------------------------------------------------
+ Purpose
+----------------------------------------------------------------
+
+ Far too many people are wasting their time and sanity trying to
+ maintain large SS13 codebases (sort of like trying to bail out
+ the Titanic with a bucket). And teaching new coders on the 
+ existing SS13 and BYOND is like weaning babies on cheap whiskey 
+ and hydrochloric acid. Someone's gotta do this.
+
+ So let's do some... aggressive refactoring.
+
+----------------------------------------------------------------
+ Goals
+----------------------------------------------------------------
+
+ 1  RAPID DEVELOPMENT
+    Let's be honest. This is the only reason to use BYOND.
+    So let's push it as far as we can.
+
+ 2  INDEFINITE DEVELOPMENT
+    This is probably going to be maintained forever.
+    So we need to make that less soul-crushingly difficult.
+
+ 3  FLEXIBILITY
+    This code should be equally suitable for a swords-and-staves
+    fantasy RPG, a co-op sci-fi survival horror, an erotic
+    deviant action-adventure, or an HVAC technician simulator.
+    Because SS99 will inevitable be all of the above and more.
+
+ 4  ROBUST USER INTERFACE
+    Because SS13's makes me want to throw myself out an airlock.
+    
+ 5  PERFORMANCE
+    This isn't some retro hipster bullshit, it's the real deal.
+    This is 2001-era software and should run fast on a toaster.
+ 

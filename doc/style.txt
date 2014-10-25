@@ -1,0 +1,32 @@
+----------------------------------------------------------------
+  CODE
+----------------------------------------------------------------
+
+  Enforced
+  --------------
+  1-tab indentation.
+  Absolute paths for all type definitions except object vars.
+    
+  Suggested
+  --------------
+  Banner brackets (or whatever you call 'em) and camelCase.
+
+----------------------------------------------------------------
+  SPRITES
+----------------------------------------------------------------
+
+  Enforced
+  --------------
+  Conditionals should be suffixes with plus/minus signs (eg 
+  toolbox, toolbox+open, toolbox-wrench).
+  Name binary-state based sprites in binary (eg "0101" not "5")
+
+  Suggested
+  --------------
+  Follow the projection, dammit. For example, if it's isometric
+  remember that NORTH is in front of us and to the right.
+  
+  
+  
+  
+  

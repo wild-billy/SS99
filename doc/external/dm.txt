@@ -1,0 +1,71 @@
+
+//**************************************************************
+//
+// Supplementary Documentation - DM Language
+// ---------------------------------------------
+// Contents:
+//     1 ABOUT DM
+//     2 COMPILER
+//     3 TYPING
+//     4 LISTS
+//     5 NUMBERS
+//
+//**************************************************************
+/*// BEGIN Doc /////////////////////////////////////////////////
+
+
+1  ABOUT DM
+   -------------------------------------------------------------
+   A chimeric and strange language, the bastard offspring of C 
+   and Python (!). Used only for BYOND. Compiled to bytecode.
+   
+   It's really poorly documented, so this should help.
+   -------------------------------------------------------------
+
+2  COMPILER
+   -------------------------------------------------------------
+   "The compiler was adapted from a program Dan had written for 
+   a comp sci class (it was actually a program that obfuscated 
+   code, lol, but it had the necessary parsing)" -- Tom
+   
+   Needless to say the compiler has not been maintained, and it
+   remains a feral and dangerous beast that Lummox and Tom will 
+   not touch with a ten-foot pole. Good luck with it.
+   -------------------------------------------------------------
+   
+3  TYPING
+   -------------------------------------------------------------
+   DM is weakly (but statically) typed. The compiler actually
+   runs casting checks at compile-time, then does absolutely
+   nothing with that information other than nag the programmer
+   if they don't typecast in a way that it appreciates.
+   
+   It's also stringly typed, ie tons of data is (and must be)
+   encoded and passed in strings, even when it'd be more logical
+   to use another format. For example, DM supports hexadecimal
+   but passes colors as a hex value in a string. Also, lists
+   are often encoded in the following format in BYOND procs:
+   MIME type 'application/x-www-form-urlencoded' ("params")
+   -------------------------------------------------------------
+
+4  LISTS
+   -------------------------------------------------------------
+   DM supports associative lists, including nesting. However, 
+   only strings and paths are supported, and all other types can
+   only be assigned to the terminal position (they can't be used
+   as indices to retrieve associated data).
+   
+   BYOND has multiple internal list types (some of which are 
+   read-only) but doesn't allow the user to define any more.
+   -------------------------------------------------------------
+   
+5  NUMBERS
+   -------------------------------------------------------------
+   DM offers decimal, hex, and octal. Binary not included.
+   Most numbers are single-precision floats. Binary arithmetic
+   is 16-bit, and as such not supported past 1111 1111 1111 1111
+   (or 65535 in decimal). Hex prefix is 0x, octal prefix is 0.
+   -------------------------------------------------------------
+
+
+*//////////////////////////////////////////////////// END Doc //

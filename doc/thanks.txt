@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+ SPECIAL THANKS
+----------------------------------------------------------------
+ Thanks to the old Goon, Bay, and TG coders. You guys taught us
+ exactly what not to do, why not to do it, and what happens when
+ you're the poor son of a bitch who has to maintain it.
+ 
+ Thanks to the BYOND devs (Tom and Lummox). You tried.
