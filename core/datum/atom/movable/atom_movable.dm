@@ -5,12 +5,12 @@
 
 /atom/movable
 	step_size = 1
-	
+
 	var/sprites = list() //See _def
 
 /atom/movable/delSoft()
 	src.loc = null
-	return ..()
+	return PARENT_CALL
 
 /atom/movable/turf()
 	var/turf/T = src.loc

@@ -24,14 +24,18 @@
 
 // Language ////////////////////////////////////////////////////
 
-#define AND		&&
-#define OR		||
-#define NOT		!
+#define AND			&&
+#define OR			||
+#define NOT			!
+#define XOR			^
 
-#define SET		|=
-#define CLEAR	&= ~
-#define TOGGLE	^=
-#define isSET	&
+#define PARENT_CALL ..()
+#define SELF_CALL	.()
 
-#define async	spawn()
-#define RETURN	//This is because of byond's manual-return cost
+#define SET			|=
+#define CLEAR		&= ~
+#define TOGGLE		^=
+#define isSET		&
+
+#define async		spawn()
+#define RETURN		//This is because of byond's manual-return cost
