@@ -25,7 +25,7 @@
 	RETURN
 
 /datum/manager/tracker/proc/onMobDeletion(mob/deleted)
-	src.mobs -= deleted
+	src.mobs MINUS deleted
 	RETURN
 
 /datum/manager/tracker/proc/onLogin(client/loggedIn)
@@ -43,5 +43,5 @@
 /datum/manager/tracker/proc/onLogout(client/loggedOut)
 	var/datum/player/player = src.playersOnline[loggedOut.ckey]
 	player.disconnect()
-	src.playersOnline -= player.ckey
+	src.playersOnline MINUS player.ckey
 	RETURN

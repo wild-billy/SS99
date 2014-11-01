@@ -9,7 +9,7 @@
 
 /datum/New()
 	if(setupComplete)	src.init()
-	else				waitingForSetup["general"] += src
+	else				waitingForSetup["general"] PLUS src
 	RETURN
 
 /datum/proc/init()
@@ -19,7 +19,7 @@
 /datum/proc/deInit()
 	src.initialized = FALSE
 	RETURN
-	
+
 /datum/proc/delSoft()
 	if(src.initialized) src.deInit()
 	evm.event("Deletion",src)
@@ -27,7 +27,7 @@
 
 /datum/Del()
 	if(src.initialized) src.deInit()
-	return ..()
+	return PARENT_CALL
 
 // Events //////////////////////////////////////////////////////
 // Simplest framework I could come up with. Prolly ok for now.
@@ -40,7 +40,7 @@
 			if(subscriber)
 				for(. in src.events[event][subRef])
 					call(subscriber,.)(arglist(args-event))
-			else src.events[event] -= subRef
+			else src.events[event] MINUS subRef
 	RETURN
 
 /datum/proc/subscribe(subscriber,event,procName)
@@ -49,23 +49,23 @@
 	if(!src.events)							src.events = list()
 	if(!(event in src.events))				src.events[event] = list()
 	if(!(subscriber in src.events[event]))	src.events[event][subscriber] = list()
-	src.events[event][subscriber] += procName
+	src.events[event][subscriber] PLUS procName
 	RETURN
 
 /datum/proc/unsubscribe(subscriber,event,procName)
 	if(!procName) procName = "on[event]"
 	subscriber = "\ref[subscriber]"
-	src.events[event[subscriber]] -= procName
-	if(!length(src.events[event][subscriber]))	src.events[event] -= subscriber
-	if(!length(src.events[event]))				src.events -= event
-	if(!src.events.len)							src.events = null			
+	src.events[event[subscriber]] MINUS procName
+	if(!length(src.events[event][subscriber]))	src.events[event] MINUS subscriber
+	if(!length(src.events[event]))				src.events MINUS event
+	if(!src.events.len)							src.events = null
 	RETURN
-	
+
 /datum/proc/unsubAll(subscriber)
 	if(!(istext(subscriber))) subscriber = "\ref[subscriber]"
 	for(. in src.events)
-		. -= subscriber
-		if(!(length(.))) src.events -= .
+		. MINUS subscriber
+		if(!(length(.))) src.events MINUS .
 	if(!(src.events.len)) src.events = null
 	RETURN
 
@@ -80,5 +80,5 @@
 			if(subscriber)
 				for(. in src.events[event][subRef])
 					async call(subscriber,.)(arglist(args-event))
-			else src.events[event] -= subRef
+			else src.events[event] MINUS subRef
 	RETURN

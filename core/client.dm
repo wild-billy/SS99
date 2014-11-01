@@ -4,10 +4,10 @@
 // Client
 // --------
 //
-// BYOND built-in base type. 
+// BYOND built-in base type.
 // Yes, BYOND made a client object that doesn't even handle
 // logging in and out. Thanks, guys. Really helpful.
-// 
+//
 // We're going to avoid using this.
 // See core/datum/helper/player.dm
 //
@@ -25,10 +25,9 @@
 
 /client/New() //Called by BYOND on login.
 	evm.event("Login",src)
-	return ..()
+	return PARENT_CALL
 
 /client/Del() //Called by BYOND on logout.
 	evm.event("Logout",src)
-	return ..()
-	
-	
+	return PARENT_CALL
+

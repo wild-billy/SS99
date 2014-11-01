@@ -24,7 +24,7 @@
 	RETURN
 
 /datum/manager/ticker/garbage/proc/onDeletion(datum/deleted)
-	src.garbage += "\ref[deleted]"
+	src.garbage PLUS "\ref[deleted]"
 	RETURN
 
 /datum/manager/ticker/garbage/proc/ticker() //placeholder
@@ -38,7 +38,7 @@
 			if(trash)
 				del(trash)
 				sleep()
-			else src.garbage -= .
+			else src.garbage MINUS .
 		oldest = older
 		older = old
 		old = src.garbage

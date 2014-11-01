@@ -21,5 +21,5 @@
 
 /datum/manager/event/New()
 	if(setupComplete)	src.init()
-	else				waitingForSetup["critical"] += src
+	else				waitingForSetup["critical"] PLUS src
 	RETURN

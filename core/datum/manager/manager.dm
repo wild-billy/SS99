@@ -7,7 +7,7 @@
 
 /datum/manager/New()
 	if(setupComplete)	src.init()
-	else				waitingForSetup["managers"] += src
+	else				waitingForSetup["managers"] PLUS src
 	RETURN
 
 /datum/manager/Del()
