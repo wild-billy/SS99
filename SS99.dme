@@ -33,7 +33,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "def\_include.dm"
+#include "_def\_include.dm"
 #include "core\_include.dm"
 #include "map\_include.dm"
 // END_INCLUDE
