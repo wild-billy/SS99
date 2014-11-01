@@ -19,7 +19,7 @@
 /datum/proc/deInit()
 	src.initialized = FALSE
 	RETURN
-	
+
 /datum/proc/delSoft()
 	if(src.initialized) src.deInit()
 	evm.event("Deletion",src)
@@ -27,7 +27,7 @@
 
 /datum/Del()
 	if(src.initialized) src.deInit()
-	return ..()
+	return PARENT_CALL
 
 // Events //////////////////////////////////////////////////////
 // Simplest framework I could come up with. Prolly ok for now.
@@ -58,9 +58,9 @@
 	src.events[event[subscriber]] -= procName
 	if(!length(src.events[event][subscriber]))	src.events[event] -= subscriber
 	if(!length(src.events[event]))				src.events -= event
-	if(!src.events.len)							src.events = null			
+	if(!src.events.len)							src.events = null
 	RETURN
-	
+
 /datum/proc/unsubAll(subscriber)
 	if(!(istext(subscriber))) subscriber = "\ref[subscriber]"
 	for(. in src.events)
