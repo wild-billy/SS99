@@ -19,8 +19,8 @@
 
 /world/New()
 	Setup()
-	return ..()
+	return PARENT_CALL
 
 /world/Del()
 	Shutdown()
-	return ..()
+	return PARENT_CALL

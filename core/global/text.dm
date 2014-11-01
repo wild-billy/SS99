@@ -7,7 +7,7 @@
 
 /proc/list2bullets(list/L,bullet="*")
 	for(var/entry in L)
-		. += "\t[bullet] [L[entry] ? ": L[entry]" :]\n"
+		. PLUS "\t[bullet] [L[entry] ? ": L[entry]" :]\n"
 	return copytext(.,1,length(.))
 
 /proc/date2text(day,month,year,format="en")
@@ -24,7 +24,7 @@
 	var/strToSearchLen = length(strToSearch)
 	var/strToFindLen = length(strToFind)
 	for(.=1,.<=strToSearchLen,.++)
-		if(copytext(strToSearch,.,.+strToFindLen) == strToFind)
+		if(copytext(strToSearch,.,.+strToFindLen) EQUAL strToFind)
 			return
 	return FALSE
 
@@ -33,8 +33,8 @@
 /proc/sanitize(strIn)
 	. = stripAsciiExtended(strIn)
 	. = stripAsciiControl(.)
-	return 
-	
+	return
+
 // Stripping ///////////////////////////////////////////////////
 // o yeah bb
 
@@ -43,7 +43,7 @@
 	var/strOut = ""
 	for(var/i=1,i<=strLen,i++)
 		. = copytext(strIn,i,i+1)
-		if(. != badChar) strOut += .
+		if(. NOT_EQUAL badChar) strOut PLUS .
 	return strOut
 
 /proc/stripBadChars(strIn) //variable args
@@ -52,7 +52,7 @@
 	var/list/badChars = args - strIn
 	for(var/i=1,i<=strLen,i++)
 		. = copytext(strIn,i,i+1)
-		if(!(. in badChars)) strOut += .
+		if(!(. in badChars)) strOut PLUS .
 	return strOut
 
 /proc/stripBadString(strIn,strBad,loose)
@@ -61,11 +61,11 @@
 	var/strOut = ""
 	for(var/pos=1,pos<=strInLen,pos++)
 		. = copytext(strIn,pos,pos+strBadLen)
-		if((. == strBad) || (loose && cmptext(.,strBad)))
-			pos += (strBadLen - 1)
-		else strOut += copytext(strIn,pos,pos+1)
+		if((. EQUAL strBad) || (loose && cmptext(.,strBad)))
+			pos PLUS (strBadLen - 1)
+		else strOut PLUS copytext(strIn,pos,pos+1)
 	return strOut
-	
+
 /proc/stripBadStrings(str,loose) //variable args
 	var/strLen = length(str)
 	var/strOut = ""
@@ -77,22 +77,22 @@
 	for(. in (args-str-loose))
 		badLen = "[length(.)]"
 		if(!badLen in badStrings)
-			badStrings += badLen
+			badStrings PLUS badLen
 			badStrings[badLen] = list()
-		badStrings[badLen] += .
+		badStrings[badLen] PLUS .
 	for(var/pos=1,pos<=strLen,pos++)
 		for(badLen in badStrings)
 			badLenNum = text2num(badLen)
 			. = copytext(str,pos,pos+badLenNum)
-			if(. in badStrings[badLen]) badStringsFound += .
+			if(. in badStrings[badLen]) badStringsFound PLUS .
 			else if(loose)
 				for(badString in badStrings[badLen])
 					if(cmptext(.,badString))
-						badStringsFound += .
+						badStringsFound PLUS .
 						break
 		if(badStringsFound.len)
-			pos += (length(max(arglist(badStringsFound))) - 1)
-		else strOut += copytext(str,pos,pos+1)
+			pos PLUS (length(max(arglist(badStringsFound))) - 1)
+		else strOut PLUS copytext(str,pos,pos+1)
 		badStringsFound.len = 0
 	return strOut
 
@@ -101,7 +101,7 @@
 
 /proc/stripNewlines(strIn)
 	return stripBadChar(strIn,"\n")
-	
+
 /proc/stripTabs(strIn)
 	return stripBadChar(strIn,"\t")
 
@@ -113,7 +113,7 @@
 			if(0 to 8)		continue
 			if(11 to 31)	continue
 			if(127)			continue
-			else			. += copytext(strIn,i,i+1)
+			else			. PLUS copytext(strIn,i,i+1)
 	return
 
 /proc/stripAsciiExtended(strIn)
@@ -121,7 +121,7 @@
 	var/strInLen = length(strIn)
 	for(var/i=1,i<=strInLen,i++)
 		if(text2ascii(strIn,i) <= 127)
-			. += copytext(strIn,i,i+1)
+			. PLUS copytext(strIn,i,i+1)
 	return
 
 // Splitting ///////////////////////////////////////////////////
