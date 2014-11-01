@@ -9,6 +9,18 @@
 ////////////////////////////////////////////////////////////////
 
 ----------------------------------------------------------------
+ Summary
+----------------------------------------------------------------
+ This is a project to build a game on BYOND, and in the process
+ create a core framework to extend BYOND into a platform
+ suitable for 2D game development in 2014.
+ 
+ SS99 is a temporary working title: please suggest better ones.
+ 
+ This project is not affiliated in any way with "Space Station
+ 13" ("SS13") or its creators.
+
+----------------------------------------------------------------
  Purpose
 ----------------------------------------------------------------
 

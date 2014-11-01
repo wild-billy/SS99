@@ -1,7 +1,6 @@
 
 //**************************************************************
-// Included Files - Map-related
+// List Defines - Sprites
 //**************************************************************
 
-//Main map:
-#include "demostation.dm"
+#define SPRITE_DEFAULT	

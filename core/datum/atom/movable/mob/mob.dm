@@ -17,17 +17,17 @@
 /mob/init()
 	evm.event("MobCreation",src)
 	src.initialized = TRUE
-	return
+	RETURN
 
 /mob/deInit()
 	src.initialized = FALSE
 	evm.event("MobDeletion",src)
-	src.ejectPlayer()
-	return
+	RETURN
 
-/mob/Login()
-	src.loadPlayer()
-	return
+/mob/proc/login(datum/player)
+	src.event("Login")
+	RETURN
 
-/mob/Logout()
-	return
+/mob/proc/logout(datum/player)
+	src.event("Logout")
+	RETURN

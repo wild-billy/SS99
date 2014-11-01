@@ -1,7 +1,6 @@
 
 //**************************************************************
-// Included Files - Map-related
+// Player-Related Defines
 //**************************************************************
 
-//Main map:
-#include "demostation.dm"
+#define MOB_TYPE_NEW	/mob

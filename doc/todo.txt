@@ -1,14 +1,22 @@
+----------------------------------------------------------------
+ GRAPHICS
+----------------------------------------------------------------
+ * Need to sort out resizing. Most recent BYOND version (507)
+   fixed a related bug. BYOND devs still haven't figured out
+   how to implement nearest-neighbor, which sucks donkey balls.
+   Will probably have to force size at a bit over SVGA or so.
+
+----------------------------------------------------------------
+ AUDIO
+----------------------------------------------------------------
+ * Huge need for audio -- most audio out there is released under
+   non-free licenses (like CC-BY-SA, for example) and we are MIT
+   so we can't use it.
 
 ----------------------------------------------------------------
  DOCUMENTATION
 ----------------------------------------------------------------
- *  Need a pretty HTML version so people actually read it.
- *  Lots more needed in the BYOND and DM docs (t-thanks byond)
+ * Need a pretty HTML version so people actually read it.
+   GitHub's doc site might be able to help with this.
 
-----------------------------------------------------------------
- GRAPHICS
-----------------------------------------------------------------
- *  Need to sort out resizing. Most recent BYOND version (507)
-    fixed a related bug. BYOND devs still haven't figured out
-    how to implement nearest-neighbor, which sucks donkey balls.
-
+ * Lots more needed in the BYOND and DM docs (t-thanks byond)

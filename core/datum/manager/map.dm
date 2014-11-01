@@ -1,7 +1,14 @@
 
 //**************************************************************
-// Included Files - Map-related
+//
+// Map Datum
+// ----------------
+// See the maps folder.
+//
 //**************************************************************
 
-//Main map:
-#include "demostation.dm"
+/datum/map
+	var/name
+	var/sizeX
+	var/sizeY
+	var/sizeZ

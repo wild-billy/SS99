@@ -5,6 +5,8 @@
 
 /atom/movable
 	step_size = 1
+	
+	var/sprites = list() //See _def
 
 /atom/movable/delSoft()
 	src.loc = null

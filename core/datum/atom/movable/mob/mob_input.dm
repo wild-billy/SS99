@@ -9,8 +9,8 @@
 //
 //**************************************************************
 
-/mob/var/inputKeys[8]
-/mob/var/list/inputHandlers = list()
+/mob/var/inputKeys[8]		//KEY:procName
+/mob/var/inputHandlers[3]	//GROUP:handlerRef
 
 /mob/proc/buildInput()
 

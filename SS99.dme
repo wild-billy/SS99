@@ -1,0 +1,40 @@
+
+//**************************************************************
+//
+// BYOND Environment File
+// -------------------------
+// The only current DM compiler (BYOND's) uses this bullshit
+// special system to determine in what order to process files.
+// 
+// Yes, order is important, because of two things. First, the
+// pre-processor is built into the compiler. Second, the 
+// compiler checks only comments upon end of file: Procs, lists,
+// strings, etc can all be split across files. Though if you
+// rely on this behavior please sodomize yourself with a cactus.
+//
+// We're going to use this by adding only the _include.dm's.
+// Those will manage the compilation and pre-processing.
+//
+//**************************************************************
+
+// DM Environment file for SS99.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+#define DEBUG
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "def\_include.dm"
+#include "core\_include.dm"
+#include "map\_include.dm"
+// END_INCLUDE
+

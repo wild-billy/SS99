@@ -15,6 +15,7 @@
 	view = VIEW_RANGE_DF
 	cache_lifespan = FALSE
 	map_format = SIDE_MAP
+	visibility = HUB_VISIBLE
 
 /world/New()
 	Setup()

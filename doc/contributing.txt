@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+ CONTRIBUTING
+----------------------------------------------------------------
+ This is a community project, contributions are always welcome.
+ See todo.txt for what's currently wanted/needed.
+ 
+ Note that anything you submit here is released under the MIT
+ license, which means anyone can use it freely, even people you
+ don't like. That's kinda the point.
+ 
