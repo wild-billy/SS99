@@ -33,6 +33,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "skin.dmf"
 #include "_def\_include.dm"
 #include "core\_include.dm"
 #include "map\_include.dm"

@@ -1,8 +1,7 @@
 
 //**************************************************************
-// Iteration
+// GFX Element Caching Flags
 //**************************************************************
 
-#define removeIn(X,L)	while(X in L){L -= X}
-#define	removeNulls(L)	removeIn(null,L)
+#define CACHE_DYN_ENTRY		1	
 

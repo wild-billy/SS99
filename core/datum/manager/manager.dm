@@ -6,8 +6,8 @@
 /datum/manager
 
 /datum/manager/New()
-	if(setupComplete)	src.init()
-	else				waitingForSetup["managers"] += src
+	if(setupStatus TEST SETUP_MANAGERS) src.init()
+	else subGlobal(src,"SetupManagers","init")
 	RETURN
 
 /datum/manager/Del()

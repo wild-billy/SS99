@@ -20,7 +20,7 @@
 /datum/manager/ticker/garbage/init()
 	async src.ticker()
 	src.initialized = TRUE
-	evm.subscribe(src,"Deletion")
+	subGlobal(src,"Deletion")
 	RETURN
 
 /datum/manager/ticker/garbage/proc/onDeletion(datum/deleted)

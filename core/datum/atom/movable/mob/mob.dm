@@ -11,10 +11,13 @@
 	layer = LAYER_MOB
 	dir = SOUTH
 	density = TRUE
+	var/atom/igm
 
 // Initialization //////////////////////////////////////////////
 
 /mob/init()
+	src.igm = new/atom/igm(src)
+	src.igm.init()
 	evm.event("MobCreation",src)
 	src.initialized = TRUE
 	RETURN

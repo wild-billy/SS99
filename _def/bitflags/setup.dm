@@ -1,8 +1,9 @@
 
 //**************************************************************
-// Iteration
+// Setup Status Flags
 //**************************************************************
 
-#define removeIn(X,L)	while(X in L){L -= X}
-#define	removeNulls(L)	removeIn(null,L)
-
+#define SETUP_BASIC    1
+#define SETUP_MANAGERS 2
+#define SETUP_CACHES   4
+#define SETUP_GENERAL  8

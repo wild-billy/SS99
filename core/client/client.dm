@@ -15,6 +15,8 @@
 
 /client
 	show_popup_menus = FALSE //We want RMB for interaction
+	show_verb_panel = FALSE
+	control_freak = CONTROL_FREAK_ALL
 
 //Shitty built-in proc, we're overriding it so it does nothing.
 //This is even suggested in the fucking language reference!
@@ -24,10 +26,13 @@
 	RETURN
 
 /client/New() //Called by BYOND on login.
+	src.buildInput()
 	evm.event("Login",src)
 	return ..()
 
 /client/Del() //Called by BYOND on logout.
+	src.inputKeys = 0		//Need to clear these refs
+	src.inputHandlers = 0	//Need to clear these refs
 	evm.event("Logout",src)
 	return ..()
 	

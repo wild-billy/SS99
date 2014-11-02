@@ -12,26 +12,30 @@
 
 // Boolean /////////////////////////////////////////////////////
 
-#define TRUE	1
-#define FALSE	0
+#define TRUE  1
+#define FALSE 0
 
 // Numbers/Math ////////////////////////////////////////////////
 // See doc/external/dm/math.txt
 
-#define BIN_MAX	65535
-#define INT_MAX	16777215
-#define NUM_MAX	(3.4*10**38)
+#define BIN_MAX 65535
+#define INT_MAX 16777215
+#define NUM_MAX (3.4*10**38)
 
 // Language ////////////////////////////////////////////////////
 
-#define AND		&&
-#define OR		||
-#define NOT		!
+#define AND     &&
+#define OR      ||
+#define NOT     !
 
-#define SET		|=
-#define CLEAR	&= ~
-#define TOGGLE	^=
-#define isSET	&
+#define SET     |=
+#define CLEAR   &= ~
+#define TOGGLE  ^=
+#define TEST    &
 
-#define async	spawn()
-#define RETURN	//This is because of byond's manual-return cost
+#define async   spawn()
+
+#define DESYNC  set waitfor = FALSE ; sleep() ;
+#define YIELD   sleep(-1);
+#define RETURN  //This is because of byond's manual-return cost
+

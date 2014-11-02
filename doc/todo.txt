@@ -18,5 +18,12 @@
 ----------------------------------------------------------------
  * Need a pretty HTML version so people actually read it.
    GitHub's doc site might be able to help with this.
-
  * Lots more needed in the BYOND and DM docs (t-thanks byond)
+ * New interface code needs documentation
+
+----------------------------------------------------------------
+ Interface
+----------------------------------------------------------------
+ * Need to figure out what windows we'll end up needing.
+ * Need to set a rough size for main map control.
+ 

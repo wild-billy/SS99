@@ -9,7 +9,23 @@
     
   Suggested
   --------------
-  Banner brackets (or whatever you call 'em) and camelCase.
+  Break lines after 64 characters or so.
+  Spaces to align elements in rows and columns (if you do this).
+  
+  Banner bracket style (or whatever you call it) for lists. eg:
+      list(
+          elem1 = val1,
+          elem2 = val2,
+          elem3 = val3,
+          )
+  
+  Lisp style for long proc calls, eg:
+      proc(
+          arg1 = val1,
+          arg2 = val2,
+          arg3 = val3,
+          arg4 = val4)
+      
 
 ----------------------------------------------------------------
   SPRITES

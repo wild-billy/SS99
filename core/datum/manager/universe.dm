@@ -46,5 +46,8 @@
 // Logging /////////////////////////////////////////////////////
 
 /datum/manager/universe/proc/Log() //variable args
-	for(var/msg in args) src.log << "[TIME]: [msg]"
+	set waitfor = FALSE
+	for(var/msg in args)
+		src.log << "[TIME]: [msg]"
+		world.log << msg
 	RETURN
