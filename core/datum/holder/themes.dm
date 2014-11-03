@@ -10,8 +10,8 @@
 //**************************************************************
 
 /var/global/list/themes = list(
-	"Default Dark"  = new/datum/holder/theme       ,
-	"Default Light" = new/datum/holder/theme/light ,
+	"Default Dark"  = new/datum/holder/theme,
+	"Default Light" = new/datum/holder/theme/light,
 	)
 
 ////////////////////////////////////////////////////////////////

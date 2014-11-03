@@ -1,0 +1,7 @@
+----------------------------------------------------------------
+ TODO - DESIGN
+----------------------------------------------------------------
+ * Need name for project
+ 
+ * Need HTML template for pretty documentation 
+ 

@@ -1,0 +1,33 @@
+----------------------------------------------------------------
+ String Processing
+----------------------------------------------------------------
+ * Common operations
+   - Sanitization
+   - Getting, finding, inserting
+   - Splitting and merging
+   - Mapping, transforms
+   - Encoding (between HTML, ascii, utf-8, etc)
+ 
+ * .ini (semi-custom format) reading and writing
+ * .cfg (custom format) reading and writing
+ * .yaml (YAML format) reading and writing
+ 
+ * Regex engine? May be useful in the future (.dll not softcode)
+   Carn may have a working one.
+ 
+ * Should probably define a text styling format at some point to
+   reduce the hideous and terrible HTML universal in SS13 code.
+   Suggested names: fuarkdown, quarkdown
+
+----------------------------------------------------------------
+ Mathematics
+----------------------------------------------------------------
+ * TimSort (port implementation by Carn)
+ * Bresenham (line-drawing, needs to be in pixel positions)
+ * Pathfinding (A* at least, BYOND's is shitty)
+ * Vector calcs (we will need these for force and motion)
+ * Physics helpers (yes we will have a crude physics engine)
+ * Gas calculations (might as well get started now)
+ * Structural smoothing algorithms (mapped-512-state?)
+ * Cryptography (SHA hashes, etc, all sorts of shit)
+ * Seeded CSPRNG: probably 1-3 XORshifts on top of a simple one

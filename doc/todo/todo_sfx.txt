@@ -1,0 +1,26 @@
+----------------------------------------------------------------
+ OVERVIEW
+----------------------------------------------------------------
+ We're inevitable going to starve for good audio. Even though 
+ audio artists benefit from copyright laws much more permissive
+ than those for source code (eg fair use, cover version), very
+ few of them release under free licenses like ours (MIT).
+ 
+ Since we're committed to releasing this under purely MIT or
+ equivalent, we can't use any restrictively-licensed audio (such
+ as that under any of the Creative Commons licenses other than
+ CC0). So we need to try to cook up our own or recruit mixers.
+ 
+ non-free licenses (like CC-BY-SA, for example) and we are MIT
+   so we can't use it.
+
+----------------------------------------------------------------
+ NEEDS
+----------------------------------------------------------------
+ * Waiting screen music
+ * Soft ping sound effects for button presses
+ * Ambience - general
+ * Chiptunes for demo "soundtrack"
+ 
+ * And a shit-ton more. We'll need everthing we can get in MIT.
+ 

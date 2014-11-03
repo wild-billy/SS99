@@ -1,0 +1,21 @@
+----------------------------------------------------------------
+ Pretty Docs
+----------------------------------------------------------------
+ * Need a nice pretty-printed version so people actually want
+   to read and write this shit.
+  
+ * Probably going to be HTML since LaTex is ancient and nowadays
+   everyone has a browser that supports headings, links, tables,
+   and colorful textboxes: all we need for documentation.
+ * GitHub's doc site might be able to help with this. Maybe a 
+   markdown-to-HTML generator?
+ * This will require some sort of dedicated syntax highlighting
+   module so we don't have to do it by hand. Probably ez-pz for
+   anyone who actually knows javascript.
+
+----------------------------------------------------------------
+ More Docs
+----------------------------------------------------------------
+ * Lots more needed in the BYOND and DM docs (t-thanks byond).
+ * GUI code needs moar doc. 
+ * Need to add in the tutorials I've got laying around --wb

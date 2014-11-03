@@ -1,0 +1,21 @@
+----------------------------------------------------------------
+ Map Tools
+----------------------------------------------------------------
+ * Need to port Nexis's tools to make them more portable and
+   dependent on fewer external libraries (scripts are meant to
+   be conveniences and having to get python and two dozen extra
+   pieces of software is not very convenient).
+   - DM Parser/Lexer
+   - Map integrity checker
+   - Map ref fixer
+   - Map render generator
+ 
+ * Cleaner tools (these reorganize .dmm's to please VCS's)
+
+----------------------------------------------------------------
+ IDE
+----------------------------------------------------------------
+ Dreammaker is a windows 95-era piece of shit. Even a fork of
+ notepad2 or SciTe would work for this. A fully portable one
+ would be even better. Basically something to point new coders
+ to and say "use this".

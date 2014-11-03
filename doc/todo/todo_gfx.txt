@@ -1,0 +1,32 @@
+----------------------------------------------------------------
+ SPRITES
+----------------------------------------------------------------
+ Will need a shit-ton, but this is not as bad as audio.
+ Also, due to pixel position the size is not as critical as with
+ SS13's tile-based system.
+ 
+ Main needs so far:
+
+  * Font sets in various sizes (for procedural graphics work)
+    - I have a 3x5 set implemented for ascii-128-plus --wb
+    - Monospace medium (about twice as large as 3x5)
+    - Monospace large (about twice as large as medium)
+    - Serif medium (about twice as large as 3x5)
+    - Serif large (about twice as large as medium)
+   
+  * 48x48 wall sprites (for top-down-tilted projection ~30 dgr)
+  * 48x32 floor sprites (see above)
+  * 48x24,24x48 half-wall sprites
+ 
+----------------------------------------------------------------
+ LICENSING
+----------------------------------------------------------------
+ Because existing SS13 codebases haven't given a single fuck
+ about properly licensing, using, and crediting the artists for
+ their sprite assets (even the ones that enforce copyright for
+ large and wealthy corporations: we're looking at you TG), we 
+ have to track down all the spriters we can and ask permission
+ to use their work in this project, under this license (MIT).
+ 
+ Artists that have granted permission so far:
+  * Nienhaus

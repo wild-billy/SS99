@@ -1,28 +1,29 @@
 
 //**************************************************************
-// Graphical Element Cache
+//
+// GUI Element Cache
+// -------------------------------
+// Robustness first, optimization later.
+//
 //**************************************************************
 
-/var/global/datum/cache/gem/gemCache = new
+/var/global/datum/cache/gui/guiCache = new
 
+#define CACHE_SIZE_INIT  rand(8,16)
 ////////////////////////////////////////////////////////////////
 
 /datum/cache
-	var/list/poolsFree
-	var/list/poolsUsed
-	var/list/elements = list(
-		"title", 
-		"subtitle",
+	var/list/poolsFree = list()
+	var/list/poolsUsed = list()
+	var/list/elements  = list(
+		/gem/gui/title,
+		/gem/gui/title/subtitle,
 		)
 
 /datum/cache/New()
 	if(setupStatus TEST SETUP_CACHES) src.init()
 	else subGlobal(src,"SetupCaches","init")
 	RETURN
-
-/datum/cache/init()
-	src.buildMain()
-	return ..()
 
 /datum/cache/Del()
 	RETURN
@@ -35,16 +36,26 @@
 
 // Building ////////////////////////////////////////////////////
 
-/datum/cache/proc/buildMain()
-	var/gem/element = new/gem/title
-	src.elements["title"] = element
-	element.cached = TRUE
-	element = new/gem/subtitle
-	src.addCustom(element.path,10)
-	src.elements["subtitle"] = element
-	element.cached = TRUE
-	src.addCustom(element.path,10)
-	return
+/datum/cache/init()
+	for(var/gem/gui/elem in src.elements)
+		src.elements -= elem
+		elem = new elem
+		src.elements[elem.elemID] = elem
+		if(elem.caching TEST CACHE_POOL)
+			src.poolsFree[elem.elemID] = list()
+			src.addCustom(element.path,CACHE_SIZE_INIT)
+			src.poolsUsed[elem.elemID] = list()
+		elem.cached = TRUE
+		YIELD
+	return ..()
+
+/datum/cache/proc/addCustom(elemPath,amount)
+	var/gem/gui/elem
+	while(amount--)
+		elem = new elemPath
+		src.poolsFree[elem.elemID] += elem
+		YIELD
+	RETURN
 
 // Element Serving /////////////////////////////////////////////
 
@@ -67,15 +78,13 @@
 		src.poolsUsed[elem.elemID] += .
 	return
 
-/datum/cache/proc/addCustom(elemPath,number)
-	set waitfor = FALSE
-	. = initial(elemPath.elemID)
-	do src.poolsFree[.] += new elemPath while(number--)
-	RETURN
 
 /datum/cache/proc/returnCustom(gem/element)
-	set waitfor = FALSE
+	DESYNC
 	element.reInit()
 	src.poolsUsed[element.elemID] -= element
 	src.poolsFree[element.elemID] |= element
 	RETURN
+
+////////////////////////////////////////////////////////////////
+#undef CACHE_SIZE_INIT

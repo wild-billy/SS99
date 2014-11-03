@@ -1,39 +1,31 @@
 
 //**************************************************************
 //
-// Universe Datum
-// -----------------
-// Holds global data and does useful stuff.
+// Debug Manager
+// ---------------
+// Does useful stuff.
 //
 //**************************************************************
 
-/var/global/datum/manager/universe/universe = new
+/var/global/datum/manager/debug/debug = new
 
 ////////////////////////////////////////////////////////////////
 
-/datum/manager/universe
-	var/name
-	var/log = FILE_LOG
-
-	var/day		= 1
-	var/month	= 9
-	var/year	= 2525
+/datum/manager/debug
+	var/log = FILE_LOG_DEBUG
 
 /datum/manager/universe/init()
-	subGlobal(src,"WorldSetup")
-	subGlobal(src,"WorldShutdown")
+	evm.subscribe(src,"WorldSetup")
+	evm.subscribe(src,"WorldShutdown")
 	src.initialized = TRUE
-	src.name = config.worldName
 	RETURN
 
 /datum/manager/universe/proc/onWorldSetup()
-	DESYNC
 	src.log << LOG_START
 	src.Log("New universe initialized.")
 	RETURN
 
 /datum/manager/universe/proc/onWorldShutdown()
-	DESYNC
 	src.Log("Universe destroyed.")
 	src.log << LOG_END
 	RETURN
@@ -49,7 +41,7 @@
 // Logging /////////////////////////////////////////////////////
 
 /datum/manager/universe/proc/Log() //variable args
-	DESYNC
+	set waitfor = FALSE
 	for(var/msg in args)
 		src.log << "[TIME]: [msg]"
 		world.log << msg

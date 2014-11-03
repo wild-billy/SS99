@@ -103,7 +103,7 @@ window "consoleWindow"
 window "main"
 	elem "main"
 		type = MAIN
-		pos = 268,94
+		pos = 281,0
 		size = 959x528
 		anchor1 = none
 		anchor2 = none
@@ -139,7 +139,7 @@ window "main"
 		alpha = 255
 		macro = "macro"
 		menu = ""
-		on-close = ".exitGame"
+		on-close = ""
 	elem "full"
 		type = MAP
 		pos = 0,0

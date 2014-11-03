@@ -1,0 +1,28 @@
+----------------------------------------------------------------
+ Windows
+----------------------------------------------------------------
+ * Need to sort out resizing. Most recent BYOND version (507)
+   fixed a related bug. BYOND devs still haven't figured out
+   how to implement nearest-neighbor, which sucks donkey balls.
+   Will probably have to force size at a bit over SVGA or so.
+ 
+ * Figure out window transparency and animations. We will need 
+   some to prevent having everything look like total ass, and 
+   it's much easier if we can show/hide the windows themselves 
+   and not just the screens we've implented on top.
+
+----------------------------------------------------------------
+ Interface
+----------------------------------------------------------------
+ * Need to figure out what windows we'll need. For example:
+   - Main map window (a given) - size?
+   - Full-screen cover (for main menu, title, and console)
+   - Console input/output (see how to play nice with defaults)
+   - Browser - how complex? Tabs? Full internet access?
+   - Hotbar(s) - how many and how large?
+   - Eye and mind extras? - for flavor and coolness
+   - Inventory(s) - needed? how large? what format (tetris?)
+   - Input/outputs: Where and how large? on-screen? multiple?
+ 
+ * Need to set rough sizes to continue certain GUI code
+ 
