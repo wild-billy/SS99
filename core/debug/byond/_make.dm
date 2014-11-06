@@ -1,7 +1,6 @@
 
 //**************************************************************
-// Included Files - Map-related
+// Compilation Instructions - BYOND Debugging
 //**************************************************************
 
-//Main map:
-#include "demostation.dm"
+#include "perfcomp.dm"

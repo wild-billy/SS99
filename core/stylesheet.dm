@@ -10,35 +10,35 @@
 /client/script = {"<style>
 
 body{
-	font-family:	sans-serif	;
+	font-family:  sans-serif    ;
 	}
 
 .debug{
-	color:			#006600		;
-	font-weight:	bold		;
-	font-family:	monospace	;
+	color:        #006600       ;
+	font-weight:  bold          ;
+	font-family:  monospace     ;
 	}
 	
 .help{
-	color:			#660099		;
+	color:        #660099       ;
 	}
 	
 .success{
-	color:			#0000CC		;
+	color:        #0000CC       ;
 	}
 	
 .fail{
-	color:			#CC0000		;
+	color:        #CC0000       ;
 	}
 	
 .flavor{
-	color:			#660066		;
-	font-family:	serif		;
+	color:        #660066       ;
+	font-family:  serif         ;
 	}
 	
 .serious{
-	color:			#CC0000		;
-	font-weight:	bold		;
+	color:        #CC0000       ;
+	font-weight:  bold          ;
 	}
 
 </style>"}

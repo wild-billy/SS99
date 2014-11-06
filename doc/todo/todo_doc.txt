@@ -19,3 +19,6 @@
  * Lots more needed in the BYOND and DM docs (t-thanks byond).
  * GUI code needs moar doc. 
  * Need to add in the tutorials I've got laying around --wb
+
+ * Going to need a whole section for data types because of all
+   the ghetto shit we're using (thanks, byond).

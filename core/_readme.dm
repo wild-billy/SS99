@@ -28,6 +28,14 @@
 2  HOW THIS IS ORGANIZED
    -------------------------------------------------------------
    The file structure of _core mostly reflects the object tree.
+   
+   One exception is the "interface" folder, since that code is
+   already hellishly complex to read through and it's easier if
+   it's all together like that.
+   Another is the "debug" folder, which includes a variety of
+   performance and other tests.
+   
+   The sprites used as demos/fallbacks are also with their code.
    -------------------------------------------------------------
 
 
@@ -71,5 +79,27 @@
    complex math with possible subnormals, I will be very sad.
    -------------------------------------------------------------
 
+6  WHY WE USE THE X=TRUE LISTS
+   -------------------------------------------------------------
+   BYOND stores lists in 2 formats, as simple arrays and (for
+   associations) as red-black trees. This means that it can be
+   much, much faster to find an associated value in an array
+   than the index, since the "in" operator uses a simple array
+   search and X[Y] uses the tree. So lists that are made to be
+   searched for specific elements will use this for performance.
+   
+   They'll look something like this:
+   
+       var/L = list(
+	       "example1" = TRUE
+		   "example2" = TRUE
+		   "example3" = TRUE
+	       )
+   
+   To check whether L contains example2, you'd do this:
+   
+       if(L["example2"])
+   
+   -------------------------------------------------------------
 
 *//////////////////////////////////////////////////// END Doc //

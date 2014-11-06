@@ -4,16 +4,21 @@
 // BYOND Environment File
 // -------------------------
 // The only current DM compiler (BYOND's) uses this bullshit
-// special system to determine in what order to process files.
+// special system to determine in what order to process files in
+// order to compile the finished .dmb binary.
 // 
-// Yes, order is important, because of two things. First, the
-// pre-processor is built into the compiler. Second, the 
-// compiler checks only comments upon end of file: Procs, lists,
-// strings, etc can all be split across files. Though if you
-// rely on this behavior please sodomize yourself with a cactus.
-//
-// We're going to use this by adding only the _include.dm's.
-// Those will manage the compilation and pre-processing.
+// For maintainability, modularity, ease of collaboration, and
+// code clarity (read: because it's shit), we're not going to 
+// use this. See make.dm for docs on what we do instead.
+// 
+// About code order: yes, it's important, for two reasons. 
+//  1  DM uses a homemade pre-processor built into the compiler.
+//  2  The only things the compiler checks upon end of file are
+//     comments: procs, lists, strings, parentheses, brackets, 
+//     etc can all be split across multiple files at will.
+//     Though if your code relies on that behavior and you're
+//     not purposefully trying to obfuscate it, please delete
+//     all of it and stop asking /b/ for coding advice.
 //
 //**************************************************************
 
@@ -33,9 +38,5 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "skin.dmf"
-#include "_def\_include.dm"
-#include "core\_include.dm"
-#include "map\_include.dm"
+#include "make.dm"
 // END_INCLUDE
-

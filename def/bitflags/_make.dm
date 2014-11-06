@@ -1,8 +1,7 @@
 
 //**************************************************************
-// Iteration
+// Compilation Instructions - Bitflags
 //**************************************************************
 
-#define removeIn(X,L)	while(X in L){L -= X}
-#define	removeNulls(L)	removeIn(null,L)
-
+#include "caching.dm"
+#include "setup.dm"

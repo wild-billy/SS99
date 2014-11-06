@@ -9,6 +9,9 @@
 //     3 TYPING
 //     4 LISTS
 //     5 NUMBERS
+//     6 PROC CALLS
+//     7 VAR DEFINITIONS
+//     8 CREATION/DELETION
 //
 //**************************************************************
 /*// BEGIN Doc /////////////////////////////////////////////////
@@ -57,6 +60,14 @@
    
    BYOND has multiple internal list types (some of which are 
    read-only) but doesn't allow the user to define any more.
+   
+   Lists are simple arrays internally, according to Lummox, but
+   associations are managed by a red-black tree in some cases.
+   The "in" operator always uses the array search. Checking or
+   assigning an association, eg X[Y], uses the tree (which means
+   it's much faster). However, assigning to a key that doesn't
+   yet exist in the list performs the tree search, the array
+   search, the addition, the tree search, then the assignment.
    -------------------------------------------------------------
    
 5  NUMBERS
@@ -65,6 +76,50 @@
    Most numbers are single-precision floats. Binary arithmetic
    is 16-bit, and as such not supported past 1111 1111 1111 1111
    (or 65535 in decimal). Hex prefix is 0x, octal prefix is 0.
+   -------------------------------------------------------------
+
+6  PROC CALLS
+   -------------------------------------------------------------
+   DM offers decimal, hex, and octal. Binary not included.
+   Most numbers are single-precision floats. Binary arithmetic
+   is 16-bit, and as such not supported past 1111 1111 1111 1111
+   (or 65535 in decimal). Hex prefix is 0x, octal prefix is 0.
+   -------------------------------------------------------------
+
+7  VAR DEFINITIONS
+   -------------------------------------------------------------
+   Annoyingly, DM only supports a limited set of operations in
+   some var definitions. Usually, object vars support absolutely
+   nothing other than list(), and must be completely static 
+   otherwise (so you have to set em in the object's init()). 
+   Global var definitions support new() and list().
+   -------------------------------------------------------------
+
+8  CREATION/DELETION
+   -------------------------------------------------------------
+   To create an object:
+   
+     new path{var1=val1;var2=val2;...}(loc=null,arg2,arg3,...)
+   
+   For path: use the object path, eg /atom/movable/example.
+   The curly-bracket section has var initializations, useful for
+   very crude modified types (it only supports static values).
+   The curly-bracketed and paren'd sections can be omitted.
+   Even the path can be omitted in a typecast-new, for example:
+   
+     /atom/movable/example = new
+    
+   Now, to hard-delete something, do this:
+     
+     del(thing)
+
+   This is insanely expensive, and we're not going to use it
+   directly when avoidable. Instead, use 
+   
+     thing.delSoft()
+    
+   Which makes sure the object is deinitialized and such and
+   tells the global garbageman to start watching it.
    -------------------------------------------------------------
 
 

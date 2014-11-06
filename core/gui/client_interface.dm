@@ -1,12 +1,6 @@
 
 //**************************************************************
-//
-// Client Input
-// ----------------------------------
-// This code is strange due to optimizations and BYOND.
-//
-// See __defines/input.dm for the list positions.
-//
+// Client Component of Interface
 //**************************************************************
 
 // We use these two lists to determine which proc to call on

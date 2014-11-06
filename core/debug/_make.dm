@@ -1,6 +1,8 @@
 
 //**************************************************************
-// Player-Related Defines
+// Compilation Instructions - Debug
 //**************************************************************
 
-#define MOB_TYPE_NEW	/mob
+#ifdef DEBUG_BYOND
+	#include "byond/make.dm"
+#endif

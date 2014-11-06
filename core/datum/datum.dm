@@ -4,8 +4,8 @@
 //**************************************************************
 
 /datum
-	var/initialized
-	var/list/events
+	var/initialized //Boolean
+	var/list/events //"eventName"=list("subRef"="procToCall")
 
 /datum/New()
 	if(setupStatus TEST SETUP_GENERAL) src.init()
@@ -20,9 +20,6 @@
 	src.initialized = FALSE
 	RETURN
 
-/datum/proc/reInit() //Mainly used by pooled objects
-	RETURN
-	
 /datum/proc/delSoft()
 	if(src.initialized) src.deInit()
 	evm.event("Deletion",src)

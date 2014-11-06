@@ -1,6 +1,9 @@
 
 # BYOND binaries:
-*.int
-*.rsc
-*.dmb
 *.lk
+*.rsc
+*.int
+*.dmb
+
+# Logs:
+/log/*

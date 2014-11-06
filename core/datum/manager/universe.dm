@@ -13,28 +13,26 @@
 
 /datum/manager/universe
 	var/name
-	var/log = FILE_LOG
 
-	var/day		= 1
-	var/month	= 9
-	var/year	= 2525
+	var/day
+	var/month
+	var/year
 
 /datum/manager/universe/init()
 	subGlobal(src,"WorldSetup")
 	subGlobal(src,"WorldShutdown")
-	src.initialized = TRUE
 	src.name = config.worldName
-	RETURN
+	src.log << LOG_START
+	src.log << "[TIME]: New universe initialized."
+	return ..()
 
 /datum/manager/universe/proc/onWorldSetup()
-	DESYNC
-	src.log << LOG_START
-	src.Log("New universe initialized.")
+	//NOTE: This is blocking to ensure it runs in proper order
+
 	RETURN
 
 /datum/manager/universe/proc/onWorldShutdown()
-	DESYNC
-	src.Log("Universe destroyed.")
+	src.log << "[TIME]: Universe destroyed.")
 	src.log << LOG_END
 	RETURN
 
@@ -48,9 +46,9 @@
 
 // Logging /////////////////////////////////////////////////////
 
-/datum/manager/universe/proc/Log() //variable args
-	DESYNC
-	for(var/msg in args)
-		src.log << "[TIME]: [msg]"
-		world.log << msg
+/datum/manager/universe/proc/Log(time=,/*...*/)
+	DESYNC //Writing to logs is i/o so we want to desync
+	for(. in args)
+		logUniversal << "[TIME]: [msg]"
+		world.log << msg //Tell DreamDaemon too
 	RETURN

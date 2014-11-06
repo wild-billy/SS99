@@ -1,11 +1,9 @@
 
 //**************************************************************
 //
-// Caches
-// ---------
-// These load, manage, store, and serve objects.
-// They're more complex than pools, and many of them will even
-// have built-in pools.
+// GUI Element Cache
+// -------------------------------
+// This loads, stores, and serves GUI elements to GMM's.
 //
 //**************************************************************
 
@@ -14,13 +12,16 @@
 ////////////////////////////////////////////////////////////////
 
 /datum/cache
-	var/list/elements  = list(/*
-		name = path  //Before initialization
-		name = ref   //After initialization
-		*/)
+	var/list/poolsFree = list()
+	var/list/poolsUsed = list()
+	var/list/elements  = list(
+		/gem/gui/title,
+		/gem/gui/title/subtitle,
+		)
 
-/datum/cache/New() //Standard init-or-subscribe
-	
+/datum/cache/New()
+	if(setupStatus TEST SETUP_CACHES) src.init()
+	else subGlobal(src,"SetupCaches","init")
 	RETURN
 
 /datum/cache/Del()

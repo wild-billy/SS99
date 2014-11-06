@@ -19,31 +19,39 @@
 // scope and purpose: most will be regular objects, independent
 // of each other, and thus add themselves to "general". However, 
 // some are global objects and thus will need to be initialized 
-// first, because the other objects depend on them.
+// first, because the other objects depend on them. 
 //
 //**************************************************************
 
-/var/global/setupStatus = 0 //See _def/bitflags/setup.dm
+/var/global/list/setupStatus = list(
+	"complete",
+	"managers" = list(
+		"universe"
+		),
+	)
+
+/var/global/list/setupSequence = list(
+	"SetupBasic"    , 
+	"SetupConfig"   ,
+	"SetupManagers" ,
+	"SetupCaches"   ,
+	"SetupGeneral"  ,
+	)
 
 // Setup ///////////////////////////////////////////////////////
 
 /proc/Setup()
-	var/list/setups = list( // Order by bit position
-		"SetupBasic"     ,  // 0001
-		"SetupManagers"  ,  // 0010
-		"SetupCaches"    ,  // 0100
-		"SetupGeneral"   ,  // 1000
-		)
-	for(.=1,.<=setups.len,.++)
+	for(.=1,.<=setupSteps.len,.++)
 		setupStatus SET (1<<(.-1))
 		eventGlobal(setups[.])
 		eventsGlobal -= setups[.]
+
+	setupStatus["complete"] = TRUE
 	eventGlobal("SetupComplete")
-	eventsGlobal -= "SetupComplete"
 	RETURN
 
 // Shutdown ////////////////////////////////////////////////////
 
 /proc/Shutdown()
-	eventGlobal(EVENT_SHUTDOWN)
+	eventGlobal("WorldShutdown")
 	RETURN

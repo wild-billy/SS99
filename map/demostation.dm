@@ -9,10 +9,10 @@
 //**************************************************************
 
 /datum/map/main
-	name = "demostation"
+	name = "demo"
 	sizeX = 64
 	sizeY = 64
 	sizeZ = 1
 
 //**************************************************************
-#include "demostation.dmm" //Path of the map dmm from this folder.
+#include "demostation.dmm" //Path to map dmm from this folder.
